@@ -24,3 +24,15 @@ export async function POST(request: Request) {
     );
   }
 }
+
+export async function GET() {
+  try {
+    const allWarehouses = await db.select().from(warehouses);
+    return Response.json(allWarehouses);
+  } catch (err) {
+    return Response.json(
+      { message: "Failed to fetch all warehouses" },
+      { status: 500 }
+    );
+  }
+}
