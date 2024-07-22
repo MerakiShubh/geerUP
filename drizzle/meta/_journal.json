@@ -15,6 +15,20 @@
       "when": 1721629688151,
       "tag": "0001_orange_ares",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1721675929949,
+      "tag": "0002_fixed_brother_voodoo",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1721676070790,
+      "tag": "0003_round_jubilee",
+      "breakpoints": true
     }
   ]
 }
