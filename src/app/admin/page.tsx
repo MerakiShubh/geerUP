@@ -1,7 +1,12 @@
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 function page() {
-  return <div>adminPage</div>;
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  );
 }
 
 export default page;
