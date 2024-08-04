@@ -20,6 +20,7 @@ const ProductSheet = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
       alert("Product Created");
+      onClose();
     },
   });
   const onSubmit = (values: FormValues) => {
