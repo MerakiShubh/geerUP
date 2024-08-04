@@ -8,10 +8,11 @@ import { getAllProducts } from "@/http/api";
 import { Product } from "@/types";
 import ProductSheet from "./product-sheet";
 import { useNewProduct } from "@/store/product/product-store";
+import { Loader } from "lucide-react";
 
 const ProductsPage = () => {
   const { onOpen } = useNewProduct();
-  const { data: products } = useQuery<Product[]>({
+  const { data: products, isLoading } = useQuery<Product[]>({
     queryKey: ["products"],
     queryFn: getAllProducts,
   });
@@ -23,9 +24,15 @@ const ProductsPage = () => {
         <Button size={"sm"} onClick={onOpen}>
           Add Product
         </Button>
+        <ProductSheet />
       </div>
-      <DataTable columns={columns} data={products || []} />
-      <ProductSheet />
+      {isLoading ? (
+        <div className="flex items-center justify-center">
+          <Loader className="size-8 animate-spin" />
+        </div>
+      ) : (
+        <DataTable columns={columns} data={products || []} />
+      )}
     </>
   );
 };
