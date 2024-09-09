@@ -3,12 +3,12 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { DataTable } from "../_components/data-table";
-import { columns } from "./columns";
+import { columns } from "./_components/columns";
 import { useQuery } from "@tanstack/react-query";
 import { getAllWarehouses } from "@/http/api";
 import { Product } from "@/types";
-import WarehouseSheet from "./warehouse-sheet";
-import { Loader, Loader2 } from "lucide-react";
+import WarehouseSheet from "./_components/warehouse-sheet";
+import { Loader } from "lucide-react";
 import { useNewWarehouse } from "@/store/warehouse/warehouse-store";
 
 const WarehousesPage = () => {
